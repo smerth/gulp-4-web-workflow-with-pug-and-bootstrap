@@ -1,0 +1,16 @@
+# Apple stuff
+.DS_Store
+.tmp
+
+# Caches
+.sass-cache
+
+# Modules
+bower_components
+node_modules
+
+# Gulp generated builds
+builds/**/*
+
+# Gulp gh-pages 
+.publish
