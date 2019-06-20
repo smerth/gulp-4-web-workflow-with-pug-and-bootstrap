@@ -162,6 +162,14 @@ function deploy(cb) {
   cb();
 }
 
+// gulp.task('deploy', function () {
+//   return gulp.src("./prod/**/*")
+//     .pipe(ghPages({
+//       remoteUrl: "https://github.com/your_github_username_here/your_github_username_here.github.io.git",
+//       branch: "master"
+//     }))
+// });
+
 var build = gulp.series(
   compileSCSS,
   concatCSS,
