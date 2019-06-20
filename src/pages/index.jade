@@ -1,0 +1,43 @@
+//- index.jade (Homepage)
+extends ../includes/layout
+block basetag
+  -var base = './'
+
+include ../includes/panel.jade
+include ../includes/button.jade 
+include ../includes/listgroup.jade 
+
+block title
+  title Web workflow with Gulp 4
+
+block content
+  h1 Web workflow with Gulp 4, Jade and Bootstrap!
+  p Get the code on Github
+  +button("primary", "link.htm") Github
+  p Connect with me 
+  +button("success", "link.htm") Connect
+  p.
+    This github repository demonstrates how to build a workflow to generate a website using Gulp! 
+
+  +listGroup
+    +listItem
+        +listHeading List group item heading
+        +listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+    +listItem
+        +listHeading List group item heading
+        +listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+    +listItem
+        +listHeading List group item heading
+        +listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.  
+
+  .row
+    .col-md-4.col-sm-6.col-xs-12
+      +panel("Gulp", "success") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+    .col-md-4.col-sm-6.col-xs-12
+      +panel("Jade", "primary") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+    .col-md-4.col-sm-6.col-xs-12
+      +panel("Bootstrap", "warning") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+  
+  
+  
+    

@@ -1,0 +1,18 @@
+//- posts.jade
+extends ../../includes/layout
+block basetag
+  -var base = '../'
+
+block title
+  title Jade Bootstrap Snippets
+
+block content
+  h1 Bootstrap Snippets with Jade
+  p Here are some of the Jade snippets used to generate this site.  Currently the repo sues Bootstrap 3 but upgrading to Bootstrap 4 is not a difficult job.
+  pre
+    code.language-html
+      | &lt;div class="container">
+      |    &lt;iframe src="http://ea-studio.forexsb.com"
+      |         style="width: 100%; min-height: 1500px">
+      |    &lt;/iframe>
+      | &lt;/div>

@@ -1,0 +1,45 @@
+block basetag
+  -var base = '.'
+
+include ./navbar.jade 
+
+doctype
+html( lang="en" )
+    head
+        block title
+          title The title
+        base(href='#{base}')
+        meta( charset='utf-8' )
+        meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+        meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+        meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+        //- your css
+        //- link(href='css/style.css', rel="stylesheet", type="text/html")
+        //- external css concatenated (bootstrap, prism, etc.)
+        //- link(href='css/libraries.min.css', rel="stylesheet", type="text/html")
+        link(href='css/style.css' rel="stylesheet")
+        link(href='css/libraries.min.css' rel="stylesheet")
+        //- Bootswatch Theme
+        link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css", rel="stylesheet")
+
+ 
+    body(style="padding-bottom:10rem;")
+        #content.container
+          +nav("Gulp 4 Web Workflow", "dropdown_menu")
+            +nav_item( "index.html", "active" ) Home
+            +nav_item_dropdown( "#" )( label="Bootstrap" )
+              +nav_item( "#" ) Action
+              +nav_item( "#" ) Another action
+              +nav_item( "#" ) Something else here
+              +nav_divider
+              +nav_header Nav header
+              +nav_item( "#" ) Separated link
+              +nav_item( "#" ) One more separated link
+            +nav_item( "gulp/index.html" ) Gulp
+
+          block content
+
+          include ./foot.jade
+        script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+        script(src='js/libraries.min.js', type="text/html")
+        script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
