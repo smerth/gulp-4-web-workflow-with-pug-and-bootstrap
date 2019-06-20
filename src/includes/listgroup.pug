@@ -1,7 +1,8 @@
 //- List group mixins
-- var groupType
+
  
 mixin listGroup(type)
+    - var groupType
     - groupType = type
     case groupType
         when 'list'
@@ -30,3 +31,4 @@ mixin listHeading
 mixin listText
     .list-group-item-text
         block
+

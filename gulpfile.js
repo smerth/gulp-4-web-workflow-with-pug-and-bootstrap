@@ -10,16 +10,10 @@ var imagemin = require("gulp-imagemin");
 var changed = require("gulp-changed");
 var uglify = require("gulp-uglify");
 var lineendingcorrector = require("gulp-line-ending-corrector");
-var jade = require("gulp-jade");
+var pug = require("gulp-pug");
 var del = require("del");
-var deploy = require("gulp-gh-pages");
-
-// var browserify = require("browserify");
-// var streamify = require("gulp-streamify");
-// var source = require("vinyl-source-stream");
+var ghPages = require("gulp-gh-pages");
 // var gulpif = require("gulp-if");
-
-// varconnect = require("gulp-connect");
 
 // Global environment variables to set different task processing
 var env = process.env.NODE_ENV || "development";
@@ -40,8 +34,8 @@ var js = "./src/js/";
 var pages = "./src/pages/";
 
 // Watch for changes in these files
-var jadeTemplates = pages + "**/*.jade";
-var jadeIncludes = "./src/includes/**/*.jade";
+var pugTemplates = pages + "**/*.pug";
+var pugIncludes = "./src/includes/**/*.pug";
 var scssFiles = scss + "**/*.scss";
 var cssFiles = css + "**/*.css";
 var imageFiles = images + "**/*";
@@ -136,10 +130,10 @@ function imgmin() {
     .pipe(gulp.dest(outputDir + "/images/"));
 }
 
-function jadePages() {
+function pugPages() {
   return gulp
-    .src(pages + "/**/*.jade")
-    .pipe(jade())
+    .src(pages + "/**/*.pug")
+    .pipe(pug())
     .pipe(gulp.dest(outputDir));
 }
 
@@ -158,14 +152,14 @@ function watch() {
   gulp.watch(libraryFiles, concatLibraries);
   gulp.watch(cssFiles, concatCSS);
   gulp.watch(imageFiles, imgmin);
-  gulp.watch(jadeTemplates, jadePages);
-  gulp.watch(jadeIncludes, jadePages);
+  gulp.watch(pugTemplates, pugPages);
+  gulp.watch(pugIncludes, pugPages);
   gulp.watch([outputDir]).on("change", browserSync.reload);
 }
 
-// Push build to gh-pages
-function deploy() {
-  return gulp.src("./builds/development/**/*").pipe(deploy());
+function deploy(cb) {
+  gulp.src("./builds/development/**/*").pipe(ghPages());
+  cb();
 }
 
 var build = gulp.series(
@@ -173,7 +167,7 @@ var build = gulp.series(
   concatCSS,
   concatLibraries,
   imgmin,
-  jadePages
+  pugPages
 );
 
 exports.compileSCSS = compileSCSS;
@@ -181,8 +175,9 @@ exports.concatCSS = concatCSS;
 exports.concatLibraries = concatLibraries;
 exports.watch = watch;
 exports.imgmin = imgmin;
-exports.jadePages = jadePages;
+exports.pugPages = pugPages;
 exports.build = build;
+exports.deploy = deploy;
 
 var develop = gulp.series(clean, build, watch);
 

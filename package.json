@@ -3,34 +3,26 @@
   "description": "(Get started with Gulp -Maximilian Schmitt)[https://youtu.be/DkRoa2LooNM?list=PLRk95HPmOM6PN-G1xyKj9q6ap_dc9Yckm]",
   "version": "1.0.0",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-pug": "^4.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "6to5ify": "^4.1.1",
     "browser-sync": "^2.26.7",
-    "browserify": "^16.2.3",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-changed": "^4.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.7.0",
     "gulp-gh-pages": "^0.5.4",
-    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^6.0.0",
-    "gulp-jade": "^1.1.0",
     "gulp-line-ending-corrector": "^1.0.3",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-streamify": "^1.0.2",
-    "gulp-uglify": "^3.0.2",
-    "gulp-util": "^3.0.8",
-    "lodash": "^4.17.11",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "gulp-uglify": "^3.0.2"
   },
   "repository": {
     "type": "git",

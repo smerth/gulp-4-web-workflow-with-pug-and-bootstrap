@@ -3,15 +3,15 @@ extends ../includes/layout
 block basetag
   -var base = './'
 
-include ../includes/panel.jade
-include ../includes/button.jade 
-include ../includes/listgroup.jade 
+include ../includes/panel.pug
+include ../includes/button.pug 
+include ../includes/listgroup.pug 
 
 block title
   title Web workflow with Gulp 4
 
 block content
-  h1 Web workflow with Gulp 4, Jade and Bootstrap!
+  h1 Web workflow with Gulp 4, Pug(Jade) and Bootstrap!
   p Get the code on Github
   +button("primary", "link.htm") Github
   p Connect with me 
@@ -34,7 +34,7 @@ block content
     .col-md-4.col-sm-6.col-xs-12
       +panel("Gulp", "success") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
     .col-md-4.col-sm-6.col-xs-12
-      +panel("Jade", "primary") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+      +panel("Pug(Jade)", "primary") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
     .col-md-4.col-sm-6.col-xs-12
       +panel("Bootstrap", "warning") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
   
