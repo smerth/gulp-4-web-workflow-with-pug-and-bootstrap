@@ -1,16 +1,16 @@
 # Gulp 4 web workflow with pug and bootstrap
 
-
 This demo uses Gulp to process pug (Jade) template files and a NODE_ENV variable to allow different builds for Development and Staging.
 
 ## Usage
 
-Clone  the repo.  Install the dependancies and run gulp
+Clone the repo. Install the dependancies and run gulp
+
 ```bash
 gulp
 ```
 
-The default gulp task runs a series of build tasks and then runs a watch task.  The browser should open and re-fresh whenever you make a change to files in `src`
+The default gulp task runs a series of build tasks and then runs a watch task. The browser should open and re-fresh whenever you make a change to files in `src`
 
 ## Gulpfile.js
 
@@ -235,18 +235,20 @@ gulp.task("default", develop);
 //         .pipe(gulp.dest(outputDir + '/js'))
 //         .pipe(connect.reload());
 // });
-
 ```
-
-
 
 ## Links
 
 ### Gulp
+
 [GulpJS](https://gulpjs.com/)
+
 [Gulp 4 Tutorial with Node JS, ImageMin, Browser Sync, SASS, SourceMaps, CleanCSS & More](https://www.youtube.com/watch?v=tTrPLQ6nOX8)
 
 ### Jade
+
 [Jade Language - Node Template Engine](http://jade-lang.com/)
+
 [Baking Bootstrap Snippets with Jade](https://webdesign.tutsplus.com/tutorials/baking-bootstrap-snippets-with-jade--cms-22798)
+
 [Jade Syntax Documentation by example](https://naltatis.github.io/jade-syntax-docs/#mixin)
